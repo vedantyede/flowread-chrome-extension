@@ -13,11 +13,13 @@ Speed read any selected text on the web — right-click and go.
 ## Usage
 
 ### Right-click method (recommended)
+
 1. Select any text on any webpage
 2. Right-click → **⚡ Read with FlowRead**
 3. A reader window opens instantly and starts reading
 
 ### Manual paste (toolbar popup)
+
 1. Click the FlowRead icon in your Chrome toolbar
 2. Paste text into the box
 3. Click **Open Reader →**
@@ -27,8 +29,8 @@ Speed read any selected text on the web — right-click and go.
 | Key            | Action            |
 |----------------|-------------------|
 | `Space`        | Play / Pause      |
-| `←` / `→`     | Skip ±10 words    |
-| `↑` / `↓`     | Speed ±50 WPM     |
+| `←` / `→`      | Skip ±10 words    |
+| `↑` / `↓`      | Speed ±50 WPM     |
 | `Escape`       | Back to text edit |
 | `Ctrl/Cmd + R` | Restart           |
 
