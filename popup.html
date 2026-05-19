@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowRead</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 300px;
+      background: #fff;
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .header {
+      border-bottom: 4px solid #000;
+      padding: 1rem 1.25rem 0.875rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+      color: #000;
+    }
+
+    .logo-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #525252;
+    }
+
+    .body {
+      padding: 1.25rem;
+    }
+
+    .tip {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: #525252;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding: 0.875rem 1rem;
+      border: 1px solid #E5E5E5;
+      background: #F5F5F5;
+    }
+
+    .tip strong {
+      color: #000;
+      display: block;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    label {
+      display: block;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #525252;
+      margin-bottom: 0.5rem;
+    }
+
+    textarea {
+      width: 100%;
+      border: 2px solid #000;
+      padding: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
+      resize: vertical;
+      border-radius: 0;
+      outline: none;
+      margin-bottom: 0.875rem;
+      min-height: 90px;
+    }
+
+    textarea:focus { border-width: 3px; }
+
+    .stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 0.875rem;
+    }
+
+    .stat-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #C0C0C0;
+    }
+
+    .stat-value {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #000;
+      letter-spacing: -0.02em;
+    }
+
+    .divider { height: 4px; background: #000; margin: 1rem 0; }
+
+    .btn-primary {
+      width: 100%;
+      padding: 0.85rem;
+      background: #000;
+      color: #fff;
+      border: 2px solid #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.1s, color 0.1s;
+      border-radius: 0;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: #fff;
+      color: #000;
+    }
+
+    .btn-primary:disabled {
+      background: #E5E5E5;
+      color: #C0C0C0;
+      border-color: #E5E5E5;
+      cursor: not-allowed;
+    }
+
+    .footer {
+      border-top: 1px solid #E5E5E5;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-tip {
+      font-size: 0.55rem;
+      letter-spacing: 0.08em;
+      color: #C0C0C0;
+      text-transform: uppercase;
+    }
+
+    .kbd {
+      display: inline-block;
+      background: #F5F5F5;
+      border: 1px solid #E5E5E5;
+      padding: 0.1rem 0.3rem;
+      font-size: 0.6rem;
+      color: #525252;
+      border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">FlowRead</span>
+    <span class="logo-sub">Speed Reader</span>
+  </div>
+
+  <div class="body">
+    <div class="tip">
+      <strong>Quick tip</strong>
+      Select text on any page → right-click → "⚡ Read with FlowRead"
+    </div>
+
+    <label for="pasteInput">Or paste text manually</label>
+    <textarea
+      id="pasteInput"
+      placeholder="Paste text here…"
+      spellcheck="false"
+    ></textarea>
+
+    <div class="stats">
+      <div>
+        <div class="stat-value" id="wordCount">0</div>
+        <div class="stat-label">Words</div>
+      </div>
+      <div>
+        <div class="stat-value" id="charCount">0</div>
+        <div class="stat-label">Chars</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <button class="btn-primary" id="openReader" disabled>
+      Open Reader →
+    </button>
+  </div>
+
+  <div class="footer">
+    <span class="footer-tip">Right-click selected text to read instantly</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
